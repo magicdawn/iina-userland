@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "create a iina plugin",
   "main": "index.js",
+  "bin": "index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/magicdawn/iina-userland.git"
