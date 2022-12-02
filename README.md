@@ -16,6 +16,8 @@ use this fork for dev https://github.com/magicdawn/iina/
 - able to open webview devtools
 - able to use webview.loadUrl, this means you can use any frontend tools, e.g Vite
 
+I will constantly rebase `develop-tweak` branch onto `iina/develop` branch
+
 ### `loadUrl`
 
 - `iina.standaloneWindow.loadFile` can load a html file
