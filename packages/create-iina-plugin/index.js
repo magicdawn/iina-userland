@@ -1,1 +1,1 @@
-module.exports = require('create-with-generator').runGenerator()
+require('create-with-generator').runGenerator({ __dirname })
