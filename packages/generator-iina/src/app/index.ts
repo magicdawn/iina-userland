@@ -9,11 +9,17 @@ import { join } from 'path'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const enquirerStyles = require('enquirer/lib/styles')
 
-// ~/Library/Application Support/com.colliderli.iina/plugins
+type GeneratorConstructorArgs = [args: string[], opts: object]
 
 class AppLogicGenerator extends Generator {
-  constructor(args, opts) {
-    super(args, opts)
+  constructor(...args: GeneratorConstructorArgs) {
+    super(...args)
+
+    this.argument('pluginName', {
+      type: String,
+      description: 'the plugin name',
+      optional: true,
+    })
   }
 
   dir: string
@@ -22,11 +28,17 @@ class AppLogicGenerator extends Generator {
     // Have Yeoman greet the user.
     this.log(yosay(`Welcome to ${pc.green('generator-iina')} generator !!!`))
 
-    const { pluginName } = (await prompt({
-      type: 'input',
-      name: 'pluginName',
-      message: 'specify plugin-name',
-    })) as { pluginName: string }
+    let pluginName = this.options.pluginName
+    if (!pluginName) {
+      // ask
+      pluginName = (
+        (await prompt({
+          type: 'input',
+          name: 'pluginName',
+          message: 'specify plugin-name',
+        })) as { pluginName: string }
+      ).pluginName
+    }
 
     const dir = _.kebabCase(pluginName)
     this.dir = dir
@@ -88,7 +100,7 @@ class AppLogicGenerator extends Generator {
 
     const items = fse.readdirSync(this.sourceRoot())
     items.forEach((item) => {
-      if (['Info.json', 'gitignore'].includes(item)) return
+      if (['Info.json', 'gitignore', '.npmignore', 'node_modules', 'dist'].includes(item)) return
       this.fs.copy(this.templatePath(item), this.destinationPath(item))
     })
 
@@ -107,10 +119,6 @@ class AppLogicGenerator extends Generator {
 }
 
 export default class AppGenerator extends AppLogicGenerator {
-  constructor(args, opts) {
-    super(args, opts)
-  }
-
   prompting() {
     return this.run()
   }
