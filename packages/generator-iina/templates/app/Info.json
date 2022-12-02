@@ -1,0 +1,19 @@
+{
+  "name": "{{ pluginName }}",
+  "identifier": "{{ pluginId }}",
+  "version": "{{ version }}",
+  "ghVersion": 3,
+  "ghRepo": "{{ userName }}/{{ repoName }}",
+  "description": "{{ description || 'a simple iina plugin' }}",
+  "author": {
+    "name": "{{ userName }}",
+    "email": "{{ userEmail }}",
+    "url": "https://iina.io"
+  },
+  "entry": "dist/index.js",
+  "globalEntry": "dist/global.js",
+  "permissions": ["show-osd", "network-request", "video-overlay", "file-system"],
+  "allowedDomains": ["iina.io", "*.iina.io"],
+  "preferencesPage": "pref.html",
+  "preferenceDefaults": {}
+}

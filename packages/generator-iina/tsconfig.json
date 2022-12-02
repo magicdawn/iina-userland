@@ -1,0 +1,21 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "generators",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "incremental": true,
+    "tsBuildInfoFile": "generators/tsconfig.tsBuildInfo"
+  },
+  "ts-node": {
+    "swc": true
+  }
+}
