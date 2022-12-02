@@ -1,0 +1,24 @@
+{
+  "name": "create-iina-plugin",
+  "version": "0.0.1",
+  "description": "create a iina plugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magicdawn/iina-userland.git"
+  },
+  "keywords": [
+    "create",
+    "iina-plugin"
+  ],
+  "author": "magicdawn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magicdawn/iina-userland/issues"
+  },
+  "homepage": "https://github.com/magicdawn/iina-userland/packages/create-iina-plugin/README.md",
+  "dependencies": {
+    "create-with-generator": "^0.0.1",
+    "generator-iina": "workspace:*"
+  }
+}
