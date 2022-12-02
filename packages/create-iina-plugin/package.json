@@ -20,5 +20,8 @@
   "dependencies": {
     "create-with-generator": "^0.0.1",
     "generator-iina": "workspace:*"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
