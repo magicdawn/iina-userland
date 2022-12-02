@@ -36,10 +36,10 @@ importers:
 
   packages/create-iina-plugin:
     specifiers:
-      create-with-generator: ^0.0.1
+      create-with-generator: ^0.1.0
       generator-iina: workspace:*
     dependencies:
-      create-with-generator: 0.0.1_7yoz4vugw4qcykie6sit5r22dm
+      create-with-generator: 0.1.0_7yoz4vugw4qcykie6sit5r22dm
       generator-iina: link:../generator-iina
 
   packages/generator-iina:
@@ -2404,8 +2404,8 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
-  /create-with-generator/0.0.1_7yoz4vugw4qcykie6sit5r22dm:
-    resolution: {integrity: sha512-Yde8TE1YLuREVFyppEPtbpbD4zs3rxg/Hx5bzEXu+KsQYDKqCm6L2PVWWyds4YbNcOlUoAQ07/uWUQ/C4yH0ZQ==}
+  /create-with-generator/0.1.0_7yoz4vugw4qcykie6sit5r22dm:
+    resolution: {integrity: sha512-A0ii0FNf9J9VMVZnDHODlhLvZwJMake6+DU3al75TnwMIq3Lxelc0lFKkEgbNFPjkJ4meBgOFZXtuzNBqpxWXQ==}
     dependencies:
       debug: 4.3.4
       import-from: 4.0.0
