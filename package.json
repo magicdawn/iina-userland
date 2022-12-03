@@ -1,16 +1,11 @@
 {
-  "name": "iina-userland",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "mocha",
     "prepare": "husky install",
     "test-cover": "nyc --reporter=lcov --reporter=text mocha",
     "npm-sync": "pnpm -r --parallel -F '!./**/templates/*' exec mc sync"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@magicdawn/prettier-config": "^0.0.2",
