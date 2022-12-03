@@ -1,6 +1,6 @@
 {
   "name": "generator-iina",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "yeoman generator to create iina plugins",
   "main": "generators/app/index.js",
   "types": "generators/app/index.d.js",

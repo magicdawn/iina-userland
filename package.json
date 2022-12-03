@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "prepare": "husky install",
-    "test-cover": "nyc --reporter=lcov --reporter=text mocha"
+    "test-cover": "nyc --reporter=lcov --reporter=text mocha",
+    "npm-sync": "pnpm -r --parallel -F '!./**/templates/*' exec mc sync"
   },
   "keywords": [],
   "author": "",
