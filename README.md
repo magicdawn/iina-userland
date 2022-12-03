@@ -29,19 +29,22 @@ to get started
 - after dev server started
 - use `loadUrl('http://localhost:5173')`
 
-## generator-iina
+## create-iina-plugin
+
+> this is a wrapper of `generate-iina` using [create-with-generator](https://github.com/magicdawn/create-with-generator)
+
+```sh
+$ pnpm create iina-plugin
+```
+
+### generator-iina
 
 > generate a iina plugin and setup a local dev environment
 
-### Install
+#### Usage
 
 ```sh
 $ pnpm add -g yo generator-iina
-```
-
-### run
-
-```
 $ yo iina
 ```
 
