@@ -20,7 +20,7 @@
   "homepage": "https://github.com/magicdawn/iina-userland/packages/create-iina-plugin/README.md",
   "dependencies": {
     "create-with-generator": "^0.1.0",
-    "generator-iina": "workspace:*"
+    "generator-iina": "workspace:latest"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

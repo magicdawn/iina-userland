@@ -14,6 +14,7 @@ type GeneratorConstructorArgs = [args: string[], opts: object]
 class AppLogicGenerator extends Generator {
   constructor(...args: GeneratorConstructorArgs) {
     super(...args)
+    // console.log(...args)
 
     this.argument('pluginName', {
       type: String,
