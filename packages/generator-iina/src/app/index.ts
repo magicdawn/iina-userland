@@ -19,7 +19,7 @@ class AppLogicGenerator extends Generator {
     this.argument('pluginName', {
       type: String,
       description: 'the plugin name',
-      optional: true,
+      required: false,
     })
   }
 
