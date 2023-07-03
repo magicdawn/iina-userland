@@ -1,0 +1,64 @@
+{
+  "name": "trpc-iina",
+  "version": "0.0.1",
+  "description": "trpc adapter for use in IINA",
+  "exports": {
+    "./server": {
+      "default": "./lib/server/index.js",
+      "types": "./lib/server/index.d.ts"
+    },
+    "./client": {
+      "default": "./lib/client/index.js",
+      "types": "./lib/client/index.d.ts"
+    },
+    "./lib/server": {
+      "default": "./lib/server/index.js",
+      "types": "./lib/server/index.d.ts"
+    },
+    "./lib/client": {
+      "default": "./lib/client/index.js",
+      "types": "./lib/client/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "dev:test": "vitest",
+    "test": "vitest run",
+    "build": "tsc",
+    "prepublishOnly": "pnpm test && pnpm build"
+  },
+  "keywords": [
+    "iina",
+    "trpc-iina",
+    "trpc-adapter",
+    "iina-trpc",
+    "iina-rpc"
+  ],
+  "dependencies": {
+    "@elasticbottle/trpc-post-message": "^0.0.4",
+    "iina-plugin-definition": "^0.0.8",
+    "mitt": "^3.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^0.32.4"
+  },
+  "peerDependencies": {
+    "@trpc/client": "^10.0.0",
+    "@trpc/server": "^10.0.0"
+  },
+  "author": "magicdawn",
+  "license": "MIT",
+  "homepage": "https://github.com/magicdawn/iina-userland/tree/main/packages/iina-devkit",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:magicdawn/iina-userland.git",
+    "directory": "packages/iina-devkit"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

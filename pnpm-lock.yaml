@@ -60,7 +60,7 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       generator-iina:
-        specifier: workspace:latest
+        specifier: workspace:^
         version: link:../generator-iina
 
   packages/generator-iina:
@@ -178,7 +178,7 @@ importers:
         specifier: ^8.0.3
         version: 8.0.3
       iina-devkit:
-        specifier: workspace:^0.0.1
+        specifier: ^0.0.1
         version: link:../../../iina-devkit
       iina-plugin-definition:
         specifier: ^0.0.8
@@ -217,6 +217,28 @@ importers:
       '@types/fs-extra':
         specifier: ^11.0.1
         version: 11.0.1
+      vitest:
+        specifier: ^0.32.4
+        version: 0.32.4
+
+  packages/trpc-iina:
+    dependencies:
+      '@elasticbottle/trpc-post-message':
+        specifier: ^0.0.4
+        version: 0.0.4(@trpc/client@10.33.0)(@trpc/server@10.33.0)
+      '@trpc/client':
+        specifier: ^10.0.0
+        version: 10.33.0(@trpc/server@10.33.0)
+      '@trpc/server':
+        specifier: ^10.0.0
+        version: 10.33.0
+      iina-plugin-definition:
+        specifier: ^0.0.8
+        version: 0.0.8
+      mitt:
+        specifier: ^3.0.0
+        version: 3.0.0
+    devDependencies:
       vitest:
         specifier: ^0.32.4
         version: 0.32.4
@@ -561,6 +583,16 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
+
+  /@elasticbottle/trpc-post-message@0.0.4(@trpc/client@10.33.0)(@trpc/server@10.33.0):
+    resolution: {integrity: sha512-i5IyeTkrhEQxZIl10S7VmXEaj/vgYLt9SGorg8nqytya3J53qoExo/pMrz5tX0i+QcxWcAvNyxRkn+pKiCGw9Q==}
+    peerDependencies:
+      '@trpc/client': ^10.0.0
+      '@trpc/server': ^10.0.0
+    dependencies:
+      '@trpc/client': 10.33.0(@trpc/server@10.33.0)
+      '@trpc/server': 10.33.0
+    dev: false
 
   /@esbuild/android-arm64@0.17.19:
     resolution: {integrity: sha512-KBMWvEZooR7+kzY0BtbTQn0OAYY7CsiydT63pVEaPtVYF0hXbUaOyZog37DKxK7NF3XacBJOpYT4adIJh+avxA==}
@@ -1828,6 +1860,18 @@ packages:
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
+
+  /@trpc/client@10.33.0(@trpc/server@10.33.0):
+    resolution: {integrity: sha512-gHKe/5MEdoi1HEF7gsviFdHC7IyVRYjS39C0uXYHlM9rJ9It+KQpz8+wu9XkORte/lbBCScOGOPLNqb5IvSF/g==}
+    peerDependencies:
+      '@trpc/server': 10.33.0
+    dependencies:
+      '@trpc/server': 10.33.0
+    dev: false
+
+  /@trpc/server@10.33.0:
+    resolution: {integrity: sha512-3EN7hiYFy1FsMqGIHEkRqtjxLhTRc/E73mdE+F/vqJWNwigM8UmAvZgFC0YTw87PYpztYzA1vxxK7LQfhXHeog==}
+    dev: false
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
@@ -4382,7 +4426,6 @@ packages:
 
   /iina-plugin-definition@0.0.8:
     resolution: {integrity: sha512-TmMUwqdyEy096teRuJuDp/4zoB5hMrGoGq9xnEQ2tZNB/37l0ySuQeSH8YwyP9tvJAPRYQ3KOzC3nS9GFM3s7Q==}
-    dev: true
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -5823,6 +5866,10 @@ packages:
     dependencies:
       minipass: 3.3.6
       yallist: 4.0.0
+
+  /mitt@3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
 
   /mixin-deep@1.3.2:
     resolution: {integrity: sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==}
