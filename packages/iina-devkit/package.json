@@ -1,0 +1,41 @@
+{
+  "name": "iina-devkit",
+  "version": "0.0.1",
+  "description": "devkit for developing iina plugins",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc",
+    "prepublishOnly": "pnpm test && pnpm build"
+  },
+  "keywords": [
+    "iina",
+    "iina-plugin",
+    "iina-plugin-devkit",
+    "iina-devkit"
+  ],
+  "dependencies": {
+    "consola": "^3.2.2",
+    "fs-extra": "^11.1.1",
+    "symlink-dir": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "vitest": "^0.32.4"
+  },
+  "author": "magicdawn",
+  "license": "MIT",
+  "homepage": "https://github.com/magicdawn/iina-userland/tree/main/packages/iina-devkit",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:magicdawn/iina-userland.git",
+    "directory": "packages/iina-devkit"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

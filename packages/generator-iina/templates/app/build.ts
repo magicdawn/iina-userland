@@ -1,10 +1,9 @@
 #!/usr/bin/env ts-node
 
 import consola from 'consola'
-import esbuild from 'esbuild'
+import esbuild, { BuildOptions } from 'esbuild'
 import { nodeBuiltin } from 'esbuild-node-builtin'
-import fse from 'fs-extra'
-import { homedir } from 'os'
+import { ensurePluginSymlink } from 'iina-devkit'
 import { join } from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
@@ -31,52 +30,14 @@ const argv = yargs(hideBin(process.argv))
   .parseSync()
 
 main().catch(console.error)
-
 async function main() {
-  processSymlinks()
+  await ensurePluginSymlink(Info.identifier, __dirname, !!argv.unlink)
   await build()
-}
-
-function processSymlinks() {
-  const IINA_PLUGINS_DIR = join(
-    homedir(),
-    'Library/Application Support/com.colliderli.iina/plugins'
-  )
-
-  const devSuffix = '.iinaplugin-dev'
-  const pluginSubdir = Info.identifier + devSuffix
-
-  // prune existing  symlinks
-  fse
-    .readdirSync(IINA_PLUGINS_DIR)
-    .filter((item) => item.endsWith(devSuffix))
-    .forEach((name) => {
-      const fullname = join(IINA_PLUGINS_DIR, name)
-      const stat = fse.lstatSync(fullname) // do not follow symlinks
-      if (!stat.isSymbolicLink()) return
-
-      if (fse.realpathSync(fullname) === __dirname && name !== pluginSubdir) {
-        consola.info('symlink prune legacy symlink: %s', fullname)
-        fse.removeSync(fullname)
-      }
-    })
-
-  // create
-  const symlinkFrom = join(IINA_PLUGINS_DIR, pluginSubdir)
-  const symlinkTo = __dirname
-
-  if (argv.unlink) {
-    fse.removeSync(symlinkFrom)
-    consola.success('symlink unlink success %s', symlinkFrom)
-  } else {
-    fse.ensureSymlinkSync(symlinkTo, symlinkFrom)
-    consola.success('symlink success %s -> %s', symlinkFrom, symlinkTo)
-  }
 }
 
 async function build() {
   const outdir = join(__dirname, 'dist')
-  await esbuild.build({
+  const buildOptions: BuildOptions = {
     entryPoints: [
       //
       __dirname + '/src/index.ts',
@@ -93,15 +54,16 @@ async function build() {
         argv.prod ? 'production' : process.env.NODE_ENV || 'development'
       ),
     },
-    watch: argv.watch
-      ? {
-          onRebuild(error, result) {
-            if (error) consola.error('watch build failed:', error)
-            else consola.success('watch build success')
-          },
-        }
-      : false,
-  })
+  }
 
-  consola.success('bundled success')
+  if (!argv.watch) {
+    await esbuild.build(buildOptions)
+    consola.success('bundled success')
+  } else {
+    const ctx = await esbuild.context({
+      ...buildOptions,
+      logLevel: 'info',
+    })
+    await ctx.watch()
+  }
 }
