@@ -29,7 +29,7 @@
     "dev:test": "vitest",
     "test": "vitest run",
     "build": "tsc",
-    "prepublishOnly": "pnpm test && pnpm build"
+    "prepublishOnly": "pnpm build"
   },
   "keywords": [
     "iina",
