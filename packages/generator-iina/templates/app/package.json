@@ -21,7 +21,7 @@
     "eslint-config-prettier": "^8.8.0",
     "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
-    "iina-devkit": "workspace:^0.0.1",
+    "iina-devkit": "^0.0.1",
     "iina-plugin-definition": "^0.0.8",
     "lint-staged": "^13.2.3",
     "picocolors": "^1.0.0",

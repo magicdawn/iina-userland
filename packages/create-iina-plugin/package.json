@@ -4,10 +4,6 @@
   "description": "create a iina plugin",
   "main": "index.js",
   "bin": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/magicdawn/iina-userland.git"
-  },
   "keywords": [
     "create",
     "iina-plugin"
@@ -17,10 +13,15 @@
   "bugs": {
     "url": "https://github.com/magicdawn/iina-userland/issues"
   },
-  "homepage": "https://github.com/magicdawn/iina-userland/packages/create-iina-plugin/README.md",
+  "homepage": "https://github.com/magicdawn/iina-userland/tree/main/packages/create-iina-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magicdawn/iina-userland.git",
+    "directory": "packages/create-iina-plugin"
+  },
   "dependencies": {
     "create-with-generator": "^0.1.0",
-    "generator-iina": "workspace:latest"
+    "generator-iina": "workspace:^"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

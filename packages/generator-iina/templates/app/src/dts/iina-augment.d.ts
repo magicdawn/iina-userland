@@ -6,6 +6,4 @@ declare namespace IINA {
       error(message: any, ...values: any[]): void
     }
   }
-
-  export type FileItem = ReturnType<IINA.API.File['list']>
 }
