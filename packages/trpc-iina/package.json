@@ -52,11 +52,11 @@
   },
   "author": "magicdawn",
   "license": "MIT",
-  "homepage": "https://github.com/magicdawn/iina-userland/tree/main/packages/iina-devkit",
+  "homepage": "https://github.com/magicdawn/iina-userland/tree/main/packages/trpc-iina",
   "repository": {
     "type": "git",
     "url": "git@github.com:magicdawn/iina-userland.git",
-    "directory": "packages/iina-devkit"
+    "directory": "packages/trpc-iina"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
