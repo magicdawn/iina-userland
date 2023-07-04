@@ -2,33 +2,11 @@
   "name": "trpc-iina",
   "version": "0.0.1",
   "description": "trpc adapter for use in IINA",
-  "exports": {
-    "./server": {
-      "default": "./lib/server/index.js",
-      "types": "./lib/server/index.d.ts"
-    },
-    "./client": {
-      "default": "./lib/client/index.js",
-      "types": "./lib/client/index.d.ts"
-    },
-    "./lib/server": {
-      "default": "./lib/server/index.js",
-      "types": "./lib/server/index.d.ts"
-    },
-    "./lib/client": {
-      "default": "./lib/client/index.js",
-      "types": "./lib/client/index.d.ts"
-    }
-  },
-  "files": [
-    "lib",
-    "README.md",
-    "CHANGELOG.md"
-  ],
   "scripts": {
     "dev:test": "vitest",
     "test": "vitest run",
-    "build": "tsc",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "prepublishOnly": "pnpm build"
   },
   "keywords": [
@@ -44,6 +22,7 @@
     "mitt": "^3.0.0"
   },
   "devDependencies": {
+    "tsup": "^7.1.0",
     "vitest": "^0.32.4"
   },
   "peerDependencies": {
@@ -59,6 +38,7 @@
     "directory": "packages/trpc-iina"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "directory": "lib"
   }
 }

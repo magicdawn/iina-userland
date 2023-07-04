@@ -12,7 +12,6 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "declaration": true,
-    "incremental": true,
     "types": ["iina-plugin-definition"]
   },
   "ts-node": {
