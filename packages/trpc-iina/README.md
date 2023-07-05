@@ -60,6 +60,14 @@ const trpc = createTRPCProxyClient<AppRouter>({
 
 [CHANGELOG.md](CHANGELOG.md)
 
+## Acknowledgements
+
+Ths project uses @elasticbottle/trpc-post-message underlying, and port it's test files.
+
+AND his Acknowledgements
+
+> Ths project would not have been possible without @jlalmes and his well-documented trpc-chrome package for which this code base was heavily built upon.
+
 ## License
 
 the MIT License http://magicdawn.mit-license.org
