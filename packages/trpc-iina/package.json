@@ -1,6 +1,6 @@
 {
   "name": "trpc-iina",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "trpc adapter for use in IINA",
   "scripts": {
     "dev:test": "vitest",
