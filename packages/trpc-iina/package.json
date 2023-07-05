@@ -7,7 +7,7 @@
     "test": "vitest run",
     "dev": "tsup --watch",
     "build": "tsup",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm test && pnpm build"
   },
   "keywords": [
     "trpc",
@@ -23,7 +23,8 @@
   },
   "devDependencies": {
     "tsup": "^7.1.0",
-    "vitest": "^0.32.4"
+    "vitest": "^0.32.4",
+    "zod": "^3.21.4"
   },
   "peerDependencies": {
     "@trpc/client": "^10.0.0",
