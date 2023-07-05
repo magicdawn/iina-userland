@@ -1,5 +1,5 @@
 import { createPostMessageHandler } from '@elasticbottle/trpc-post-message/adapter'
-import { AnyRouter } from '@trpc/server'
+import { type AnyRouter } from '@trpc/server'
 
 export function createIINATrpcServer(
   appRouter: AnyRouter,
